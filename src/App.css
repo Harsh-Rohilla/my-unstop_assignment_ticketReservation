@@ -1,0 +1,82 @@
+
+/* src/App.css */
+.seat-map {
+  display: flex;
+  flex-direction: column;
+}
+
+.seat-row {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.seat {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #000;
+  margin-right: 5px;
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+.booked {
+  background-color: red; /* Color for already booked seats */
+  color: white;          /* Text color for contrast */
+}
+
+.available {
+  background-color: green; /* Color for available seats */
+}
+
+.user-booked {
+  background-color: blue; /* Color for seats booked by the user */
+  color: white;           /* Text color for contrast */
+}
+
+/* Hover effects */
+.seat-container {
+  position: relative; /* To position the tooltip */
+}
+
+.tooltip {
+  visibility: hidden; /* Initially hide the tooltip */
+  background-color: black; /* Tooltip background color */
+  color: white; /* Tooltip text color */
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 100%; /* Position above the seat */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0; /* Hide by default */
+  transition: opacity 0.3s;
+}
+
+.seat-container:hover .tooltip {
+  visibility: visible; /* Show tooltip on hover */
+  opacity: 1; /* Fade in effect */
+}
+
+.seat:hover {
+  opacity: 0.8; /* Slightly transparent on hover */
+}
+
+.available:hover {
+  background-color: lightgreen; /* Lighter green for available seats on hover */
+}
+
+.booked:hover {
+  background-color: darkred; /* Darker red for booked seats on hover */
+}
+
+.user-booked:hover {
+  background-color: darkblue; /* Darker blue for user's booked seats on hover */
+}
+
+.booking-form {
+  margin-top: 20px;
+}
